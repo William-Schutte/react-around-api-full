@@ -1,0 +1,6 @@
+.card__overlay {
+    background-color: #fff;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+}

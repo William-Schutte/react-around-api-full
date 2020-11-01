@@ -1,0 +1,16 @@
+.header__sign-out {
+    height: min-content;
+    white-space: nowrap;
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #A9A9A9;
+}
+
+@media screen and (max-width: 425px) {
+    .header__sign-out {
+        margin: 0 auto 40px;
+    }
+}

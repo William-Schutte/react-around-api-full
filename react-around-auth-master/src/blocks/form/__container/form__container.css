@@ -1,0 +1,23 @@
+.form__container {
+    margin: auto;
+    margin-top: 30vh;
+    box-sizing: border-box;
+    position: relative;
+    height: min-content;
+    max-height: 330px;
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 36px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .15);
+}
+
+@media screen and (max-width: 600px) {
+    .form__container {
+        max-width: calc(100% - 40px);
+        margin: 40% auto 0;
+        padding: 30px;
+    }
+}

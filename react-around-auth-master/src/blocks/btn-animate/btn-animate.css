@@ -1,0 +1,8 @@
+.btn-animate {
+    transition: opacity .2s linear;
+}
+
+.btn-animate:not(.form__save-button_disabled):hover {
+    opacity: .6;
+    cursor: pointer;
+}

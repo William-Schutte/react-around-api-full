@@ -1,0 +1,18 @@
+@import url('./_failure/form__tool-icon_failure.css');
+@import url('./_success/form__tool-icon_success.css');
+
+
+.form__tool-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    margin: 24px auto 0;
+}
+
+@media screen  and (max-width: 600px) {
+    .form__tool-icon {
+        margin-top: 20px;
+    }
+}

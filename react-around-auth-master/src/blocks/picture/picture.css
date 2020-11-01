@@ -1,0 +1,18 @@
+@import url('./__column/picture__column.css');
+@import url('./__exit-button/picture__exit-button.css');
+@import url('./__img/picture__img.css');
+@import url('./__title/picture__title.css');
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .85);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .4s linear, opacity .4s ease;
+}

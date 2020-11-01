@@ -1,0 +1,18 @@
+.header__email {
+    height: min-content;
+    text-decoration: none;
+    margin: 0 0 0 auto;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 425px) {
+    .header__email {
+        margin: 12px auto 18px;
+    }
+}

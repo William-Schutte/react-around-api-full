@@ -1,0 +1,9 @@
+.picture__title {
+    color: #FFFFFF;
+    display: flex;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 10px 0 0;
+}

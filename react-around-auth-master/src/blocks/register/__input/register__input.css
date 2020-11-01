@@ -1,0 +1,15 @@
+.register__input {
+    display: flex;
+    background: none;
+    color: #FFF;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 11px;
+    border: none;
+    border-bottom: 2px solid #CCC;
+}
+
+.register__input:nth-of-type(2) {
+    margin: 30px 0 auto;
+}

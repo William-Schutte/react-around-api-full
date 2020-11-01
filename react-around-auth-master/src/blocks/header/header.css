@@ -1,0 +1,28 @@
+@import url('./__email/header__email.css');
+@import url('./__logo/header__logo.css');
+@import url('./__link/header__link.css');
+@import url('./__sign-out/header__sign-out.css');
+@import url('./__menu-btn/header__menu-btn.css');
+@import url('./_menu/header_menu.css');
+
+.header {
+    margin: 45px auto 0;
+    display: flex;
+    border-bottom: 1px solid #545454;
+    height: 74px;
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .header {
+        margin-top: 28px;
+        height: 56px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header {
+        margin: 28px -19px 0;
+        height: min-content;
+        width: 100vw;
+    }
+}

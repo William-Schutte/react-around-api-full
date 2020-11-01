@@ -1,0 +1,34 @@
+@import url('./__container/form__container.css');
+@import url('./__error/form__error.css');
+@import url('./__exit-btn/form__exit-btn.css');
+@import url('./__name/form__name.css');
+@import url('./__occupation/form__occupation.css');
+@import url('./__place/form__place.css');
+@import url('./__url/form__url.css');
+@import url('./__save-button/form__save-button.css');
+@import url('./__save-button/_disabled/form__save-button_disabled.css');
+@import url('./__title/form__title.css');
+@import url('./__input-field/form__input-field.css');
+@import url('./__input/form__input.css');
+@import url('./__tool-tip/form__tool-tip.css');
+@import url('./__tool-icon/form__tool-icon.css');
+
+.form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .7);
+    height: 100%;
+    width: 100%;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .4s linear, opacity .4s ease;
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        margin: 0px;
+    }
+}

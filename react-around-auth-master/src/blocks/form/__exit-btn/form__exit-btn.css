@@ -1,0 +1,23 @@
+.form__exit-btn {
+    display: flex;
+    position: absolute;
+    top: -48px;
+    right: -48px;
+    background: none;
+    background-size: contain;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 58px;
+    height: 58px;
+    background-image: url('../../../images/exit-icon.svg');
+}
+
+@media screen and (max-width: 600px) {
+    .form__exit-btn {
+        width: 42px;
+        height: 42px;
+        top: -54px;
+        right: calc(50% - 21px);
+    }
+}

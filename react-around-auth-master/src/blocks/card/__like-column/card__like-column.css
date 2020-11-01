@@ -1,0 +1,5 @@
+.card__like-column {
+    display: flex;
+    flex-direction: column;
+    margin: auto 18px auto auto;
+}

@@ -1,0 +1,15 @@
+@import url('./__header/register__header.css');
+@import url('./__input/register__input.css');
+@import url('./__button/register__button.css');
+@import url('./__link/register__link.css');
+
+.register {
+    display: flex;
+    flex-direction: column;
+    max-width: 358px;
+    height: 60vh;
+    margin: 0 auto 80px;
+    color: #fff;
+    justify-content: space-around;
+    padding: 0 11px;
+}

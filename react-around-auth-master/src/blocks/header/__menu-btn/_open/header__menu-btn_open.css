@@ -1,0 +1,6 @@
+.header__menu-btn_open {
+    width: 24px;
+    height: 24px;
+    margin: 3px 30px 0 auto;
+    background-image: url('../../../../images/menu-icon.svg');
+}

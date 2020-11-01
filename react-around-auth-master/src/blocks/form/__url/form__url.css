@@ -1,0 +1,17 @@
+.form__url {
+    width: 100%;
+    border: none;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #000;
+    margin-bottom: auto;
+}
+
+@media screen  and (max-width: 600px) {
+    .form__url {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
