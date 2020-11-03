@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-const { errors } = require('celebrate');
+const { isCelebrateError } = require('celebrate');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const userRouter = require('./routes/user.js');
@@ -36,6 +36,7 @@ app.get('/crash-test', () => {
     throw new Error('server will crash now');
   }, 0);
 });
+
 // These are the default routes and do not require a user to be logged in, i.e. auth
 app.post('/signin', bodyParser.json(), login);
 app.post('/signup', bodyParser.json(), createUser);
@@ -50,9 +51,12 @@ app.get('*', (req, res) => {
 });
 
 app.use(errorLogger);
-app.use(errors());
 app.use((err, req, res, next) => {
-  const { statusCode = 500, message } = err;
+  let { statusCode = 500, message } = err;
+  if (isCelebrateError(err)) {
+    statusCode = 400;
+    message = 'Invalid input. Validation error.';
+  }
   res.status(statusCode).send({
     message: (statusCode === 500) ? 'Server error' : message,
   });

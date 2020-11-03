@@ -33,11 +33,7 @@ class Api {
             body: JSON.stringify({ "name": newName, "about": newAbout })
         })
             .then(res => {
-                if (res.status === 200) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return res.json();
             });
     }
 
@@ -51,11 +47,7 @@ class Api {
             body: JSON.stringify({ "avatar": newUrl })
         })
             .then(res => {
-                if (res.status === 200) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return res.json();
             });
     }
 
@@ -86,11 +78,7 @@ class Api {
             body: JSON.stringify({ name: newName, link: newLink })
           })
             .then(res => {
-              if (res.ok) {
-                  return res.json();
-              } else {
-                  return Promise.reject(`Error: ${res.status}`);
-              }
+              return res.json();
             });
     }
 

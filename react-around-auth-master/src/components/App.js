@@ -48,7 +48,8 @@ class App extends React.Component {
     componentDidMount() {
         // Check if user has jwt token
         const jwt = localStorage.getItem('jwt');
-
+        
+        // If so, get user info and cards
         if (jwt) {
             this.setState({ jwt: jwt });
             auth.getUser(jwt).then((res) => {
@@ -64,14 +65,7 @@ class App extends React.Component {
             }).catch((err) => { 
                 console.log(err) 
             });
-        }   
-            //  // Get user info for profile section
-            // api.getUserInfo(jwt).then((res) => { 
-            //     this.setState({ currentUser: res }); 
-            // }).catch((err) => { 
-            //     console.log(err) 
-            // });
-            
+        
             // Get initial cards
             api.getInitialCards(jwt).then((res) => { 
                 if (res) {
@@ -80,20 +74,13 @@ class App extends React.Component {
             }).catch((err) => { 
                 console.log(err) 
             });
+        }
     }
 
     handleLogIn(email, password) {
         auth.authorize(email, password).then((res) => {
             if (res) {
-                this.setState({ isLoggedIn: true, userEmail: email, currentUser: res }, 
-                    () => {
-                        api.getInitialCards(localStorage.getItem('jwt')).then((res) => { 
-                            if (res) {
-                                this.setState({ cards: res.data });
-                            }
-                        });
-                        this.props.history.push('/');
-                    });
+                this.componentDidMount();
             } else {
                 this.handleAuthRegClick(false);
             }
@@ -154,15 +141,29 @@ class App extends React.Component {
         this.setState({ selectedCard: card });
     }
 
+    // This route has Joi validation on the API and thus has slightly different error handling
     handleUpdateUser(newInfo) {
         api.patchUserInfo({...newInfo, token: this.state.jwt })
-            .then((res) => { this.setState({ currentUser: res.data }, this.closeAllPopups())})
+            .then((res) => { 
+                if (res.data) {
+                    this.setState({ currentUser: res.data }, this.closeAllPopups());
+                } else {
+                    return Promise.reject(`Error: 400; ${res.message}`);
+                }
+            })
             .catch((err) => { console.log(err) });
     }
 
+    // This route has Joi validation on the API and thus has slightly different error handling
     handleUpdateAvatar(avatar) {
         api.patchUserPic({...avatar, token: this.state.jwt })
-            .then((res) => { this.setState({ currentUser: res.data }, this.closeAllPopups())})
+            .then((res) => { 
+                if (res.data) {
+                    this.setState({ currentUser: res.data }, this.closeAllPopups());
+                } else {
+                    return Promise.reject(`Error: 400; ${res.message}`);
+                }
+            })
             .catch((err) => { console.log(err) });
     }
 
@@ -186,13 +187,18 @@ class App extends React.Component {
             });
     }
 
+    // This route has Joi validation on the API and thus has slightly different error handling
     handleAddPlace(card) {
         api.addNewCard({...card, token: this.state.jwt })
             .then((res) => {
-                const newCards = [...this.state.cards, res.data];
-                this.setState({ cards: newCards }, this.closeAllPopups());
+                if (res.data) {
+                    const newCards = [...this.state.cards, res.data];
+                    this.setState({ cards: newCards }, this.closeAllPopups());
+                } else {
+                    return Promise.reject(`Error: 400; ${res.message}`);
+                }
             }).catch((err) => { 
-                console.log(err) 
+                console.log(err);
             });
     }
 
