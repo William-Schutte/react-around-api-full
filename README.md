@@ -1,10 +1,9 @@
-# Project 15: Around The U.S. Full-Stack
-## William Schutte
-## November 2020
+# Project 15: Around The U.S., Full-Stack
+## William Schutte, November 2020
 Practicum by Yandex
 -----
 
-<a href="https://ws.p15.students.nomoreparties.site/" target="_blank">See this project here!</a>
+[See this project here!](https://ws.p15.students.nomoreparties.site/)
 (Server IP: 13.92.255.17)
 
 Create a new user with the signup button or use a default login for convenience:  
