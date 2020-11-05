@@ -1,11 +1,19 @@
-# Project 15: Around The U.S. Full-Stack
-## William Schutte
-## November 2020
+# Project 15: Around The U.S., Full-Stack
+## William Schutte, November 2020
 Practicum by Yandex
 -----
 
 [See this project here!](https://ws.p15.students.nomoreparties.site/)
-Server IP: 13.92.255.17
+(Server IP: 13.92.255.17)
+
+Create a new user with the signup button or use a default login for convenience:  
+**User:** test@mail.com  
+**Pass:** 1234  
+
+### Functionality
+Add some cool pictures using the "+" button and customize your name and subtitle with the edit button! You can change your 
+avatar by clicking on it and providing an image link. Like/unlike images with the heart icon. Click on any card to pull
+up the full sized image. You may delete cards, but only those that you've added!
 
 ### Overview
 This project represents work from the 12th through 15th projects for the web-dev course. These
@@ -36,3 +44,8 @@ The front end is built with Create-React app.
 * Git/GitHub
 
 # Revisions:
+## Review 1, 11/2/2020
+* App was not showing likes correctly when logging in (only when returning to page with JWT).
+Invoked componentDidMount() in login method solved the issue.
+* Fixed server response and frontend error handling to correctly display Celebrate/Joi
+vaidation errors in console.
