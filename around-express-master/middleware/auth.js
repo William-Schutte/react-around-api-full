@@ -1,3 +1,4 @@
+const { NODE_ENV, JWT_KEY } = process.env;
 const jwt = require('jsonwebtoken');
 const LoginError = require('../errors/login-err');
 
@@ -12,7 +13,7 @@ module.exports = (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, 'secret_key');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_KEY : 'secret_key');
   } catch (err) {
     const err2 = new LoginError('Authorization Verification Failure');
     next(err2);
